@@ -2,7 +2,7 @@ package ex2.CarShop;
 
 import java.io.Serializable;
 
-public class Seat implements Car, Serializable //built-in Interface	
+public class Seat implements Car, Serializable, Sellable //built-in Interface	
 {
 	
 	private String  model;
@@ -10,13 +10,15 @@ public class Seat implements Car, Serializable //built-in Interface
 	private int horsePower;
 	
 	private String countryProduced;
+	private Double price;
 	
-	public Seat(String  model, String color, int horsePower, String countryProduced)
+	public Seat(String  model, String color, int horsePower, String countryProduced, Double price)
 	{
 		this.setModel(model);
 		this.setColor(color);
 		this.setHorsePower(horsePower);
-		this.setCountryProduced(countryProduced);
+		this.setCountryProduced(countryProduced); 
+		this.setPrice(price);
 	}
 	
 	
@@ -56,6 +58,10 @@ public class Seat implements Car, Serializable //built-in Interface
 			 
 		this.countryProduced = countryProduced;
 	 }
+	 
+	 private void setPrice(Double price) {
+		this.price = price;
+	}
 
 	@Override
 	public String getModel() {
@@ -73,6 +79,12 @@ public class Seat implements Car, Serializable //built-in Interface
 	public int getHorsePower() {
 		// TODO Auto-generated method stub
 		return this.horsePower;
+	}
+	
+	@Override
+	public Double getPrice() {
+		// TODO Auto-generated method stub
+		return this.price;
 	}
 	
 	//This is Leon produced in Spain and have 4 tires
